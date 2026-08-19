@@ -1,79 +1,165 @@
-This is the Official repository of **Java Spring Boot: Professional eCommerce Project Masterclass** on Udemy
+# 🏋️ Fitness Web Application
 
-# The Ultimate Java and Spring Boot Mastery Roadmap
+A full-stack **Fitness Web Application** designed to help users manage their fitness activities, workouts, and related information through a simple and user-friendly web interface.
 
-Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 150+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
+## 🚀 Features
 
-## 🎓 Learning Roadmap
+* 🔐 User authentication and authorization
+* 👤 User management
+* 🏋️ Workout and fitness management
+* ➕ Create fitness/workout records
+* 🔍 View and manage fitness data
+* ✏️ Update existing records
+* 🗑️ Delete records
+* 🔄 RESTful CRUD operations
+* 📊 Backend API integration
+* 🗄️ Database connectivity
+* 🌐 Responsive web interface
 
-Most of the courses below are available in **Udemy For Business**, so if you have subscription - you can get FREE access.
-Here’s a structured path to enhance your skills with detailed courses available:
+## 🛠️ Technologies Used
 
-1. **[Spring Boot By Building Complex Projects Step by Step](https://link.embarkx.com/spring-boot) (85+ Hours of Content)**
-2. **[Master Spring Boot Microservices by Building eCommerce Project](https://link.embarkx.com/microservices) (55+ Hours of Content)**
-3. **[Learn Java with 60+ Hours of Content](http://link.embarkx.com/java) (60+ Hours of Content)**
-4. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security) (34+ Hours of Content)**
-5. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij) (3+ Hours of Content)**
+### Backend
 
+* **Java**
+* **Spring Boot**
+* **Spring MVC**
+* **Spring Data JPA**
+* **REST APIs**
+* **Hibernate**
 
-## 🌟 With All Our Courses You Gain Access To
+### Database
 
-- 📝 **Notes:** Detailed and downloadable notes to accompany each lesson.
-- 💻 **Source Code:** Full access to the source code used in the tutorials.
-- 🤔 **Doubt Solving:** Responsive instructor and community support.
-- 🎥 **High-Quality HD Videos:** Easy to understand, high-definition video tutorials.
-- 🔄 **Free Lifetime Updates:** Continuous updates to course content at no extra cost.
+* **MySQL**
+* **SQL**
 
-## 📚 Why Choose This Mastery Series?
+### Frontend
 
-With this series, you're not just learning; you're preparing to dominate the field of Java and Spring Boot development. Our structured learning path ensures that you build your skills progressively, with each course designed to build on the knowledge gained from the previous one.
+* **HTML5**
+* **CSS3**
+* **JavaScript**
+* **React.js** *(if used in your project)*
 
-### Join Us Now!
+### Tools
 
-Start your journey today to become a master at Java and Spring Boot. Our community and expert instructors are here to support your learning every step of the way. **Enroll and start building your future, today!**
+* **Git & GitHub**
+* **Maven**
+* **Postman**
+* **Eclipse / IntelliJ IDEA / VS Code**
 
+## 📁 Project Structure
 
+```text
+fitness-web-project/
+│
+├── fitness-frontend/       # Frontend application
+│
+├── gateway/                # API Gateway
+│
+├── configserver/            # Configuration Server
+│
+├── eureka/                  # Service Discovery
+│
+├── services/                # Backend microservices
+│
+├── pom.xml                 # Maven configuration
+│
+└── README.md               # Project documentation
+```
 
+## 🔄 CRUD Operations
 
+The application supports complete CRUD functionality:
 
-# Usage Policy for Course Materials
+| Operation  | Description                  |
+| ---------- | ---------------------------- |
+| **Create** | Add new fitness/workout data |
+| **Read**   | Retrieve fitness information |
+| **Update** | Modify existing records      |
+| **Delete** | Remove records               |
 
-## Instructor Information
+## ⚙️ How to Run
 
-**Instructor:** Faisal Memon  
-**Company:** [EmbarkX.com](http://www.embarkx.com)
+### 1. Clone the repository
 
-## Policy Overview
+```bash
+git clone https://github.com/buntyprasad12/fitness-web-project.git
+```
 
-This document outlines the guidelines and restrictions concerning the use of course materials provided by EmbarkX, including but not limited to PDF presentations, code samples, and video tutorials.
+### 2. Open the project
 
-### 1. Personal Use Only
+Open the project in **Eclipse, IntelliJ IDEA, or VS Code**.
 
-The materials provided in this course are intended for **your personal use only**. They are to be used solely for the purpose of learning and completing this course.
+### 3. Configure the database
 
-### 2. No Unauthorized Sharing or Distribution
+Create a MySQL database and update the database configuration in the Spring Boot application's `application.properties` or `application.yml`.
 
-You are **not permitted** to share, distribute, or publicly post any course materials on any websites, social media platforms, or other public forums without prior written consent from the instructor.
+Example:
 
-### 3. Intellectual Property
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/fitness_db
+spring.datasource.username=root
+spring.datasource.password=your_password
 
-All course materials are protected by copyright laws and are the intellectual property of Faisal Memon and EmbarkX. Unauthorized use, reproduction, or distribution of these materials is **strictly prohibited**.
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
 
-### 4. Reporting Violations
+### 4. Build the project
 
-If you become aware of any unauthorized sharing or distribution of course materials, please report it immediately to [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com).
+```bash
+mvn clean install
+```
 
-### 5. Legal Action
+### 5. Run the Spring Boot application
 
-We reserve the right to take legal action against individuals or entities found to be violating this usage policy.
+```bash
+mvn spring-boot:run
+```
 
-## Thank You
+### 6. Start the frontend
 
-Thank you for respecting these guidelines and helping us maintain the integrity of our course materials.
+If the project uses React:
 
-## Contact Information
+```bash
+cd fitness-frontend
+npm install
+npm start
+```
 
-- **Email:** [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com)
-- **Website:** [www.embarkx.com](http://www.embarkx.com)
+## 📌 API
 
+The backend provides REST APIs for managing fitness-related data.
 
+Example endpoints:
+
+```text
+GET     /api/fitness
+GET     /api/fitness/{id}
+POST    /api/fitness
+PUT     /api/fitness/{id}
+DELETE  /api/fitness/{id}
+```
+
+## 🎯 Project Objective
+
+The main objective of this project is to develop a practical fitness management system while implementing modern software development concepts such as:
+
+* REST API development
+* CRUD operations
+* Spring Boot
+* Database integration
+* Microservices architecture
+* API Gateway
+* Service Discovery
+* Frontend-backend integration
+* Git and GitHub version control
+
+## 👨‍💻 Developer
+
+**Bunty Prasad Gupta**
+
+Java | Spring Boot | SQL | REST API | Git & GitHub
+
+### ⭐ If you find this project useful
+
+Feel free to **star ⭐ the repository** and explore the project.
